@@ -1,0 +1,163 @@
+<project name="autotest" basedir="." default="build-all">
+    <property file="build.properties"/>
+    <property environment="env"/>
+    
+    <property name="src" value="src"/>
+    <property name="etc.dir" value="etc"/>
+    <property name="reports" value="reports"/>
+    <property name="build" value="bin"/>
+    <property name="lib" value="lib"/>
+    
+    <path id="classpath">
+        <fileset dir="${lib}">
+            <include name="**/*.jar"/>
+        </fileset>
+        <pathelement path="${build}"/>
+    </path>
+    
+    <taskdef resource="testngtasks" classpathref="classpath"/>
+    <taskdef resource="net/sf/antcontrib/antcontrib.properties">
+        <classpath>
+            <pathelement location="${env.ANT_HOME}/lib/ant-contrib-1.0b3.jar"/>
+        </classpath>
+    </taskdef>
+    
+    <target name="clean">
+        <delete dir="${reports}"/>
+        <delete dir="${build}"/>
+        <delete file="chromedriver.log"/>
+    </target>
+    
+    <target name="build-all">
+        <delete dir="${build}"/>
+        <mkdir dir="${build}"/>
+        <javac classpathref="classpath" srcdir="${src}" destdir="${build}"
+               debug="true" deprecation="false" optimize="false" failonerror="true"/>
+    </target>
+    
+    <macrodef name="test">
+        <attribute name="producttype"/>
+        <attribute name="client"/>
+        <attribute name="url"/>
+        <attribute name="login.username"/>
+        <attribute name="login.password"/>
+        <attribute name="servername"/>
+        
+        <sequential>
+            <condition property="propsSpecified">
+                <and>
+                    <isset property="group"/>
+                    <isset property="browser"/>
+                </and>
+            </condition>
+            <fail message="Product type and/or Browser property is not specified." unless="propsSpecified"/>
+            
+            <runtarget target="build-all"/>
+            
+            <delete dir="${reports}/@{client}.${group}.${browser}"/>
+            <mkdir dir="${reports}/@{client}.${group}.${browser}/run1"/>
+            <copy todir="${reports}/@{client}.${group}.${browser}" file="${etc.dir}/report.htm" overwrite="true"/>
+            <copy todir="${reports}/@{client}.${group}.${browser}/run1" file="${etc.dir}/testng.xml"
+                  overwrite="true">
+                <filterset>
+                    <filter token="selenium.browser" value="*${browser}"/>
+                    <filter token="producttype" value="@{producttype}"/>
+                    <filter token="client" value="@{client}"/>
+                    <filter token="group" value="${group}"/>
+                    <filter token="website.url" value="@{url}"/>
+                </filterset>
+            </copy>
+            
+            <testng classpathref="classpath"
+                    outputdir="${reports}/@{client}.${group}.${browser}/run1"
+                    failureProperty="test.run1.failed"
+                    verbose="5"
+                    usedefaultlisteners="false"
+                    listeners="org.testng.reporters.FailedReporter">
+                <sysproperty key="login.admin_username" value="@{login.username}"/>
+                <sysproperty key="login.admin_password" value="@{login.password}"/>
+                <sysproperty key="login.username" value="@{login.username}" />
+                <sysproperty key="login.password" value="@{login.password}" />
+                <sysproperty key="client" value="@{client}"/>
+                <sysproperty key="browser" value="${browser}"/>
+                <sysproperty key="url" value="@{url}"/>
+                <sysproperty key="reportdir" value="${reports}/@{client}.${group}.${browser}/run1"/>
+                <sysproperty key="attemptNumber" value="1"/>
+                <sysproperty key="product" value="@{producttype}"/>
+                <sysproperty key="group" value="${group}"/>
+                <sysproperty key="servername" value="@{servername}"/>
+                <xmlfileset dir="${reports}/@{client}.${group}.${browser}/run1" includes="testng.xml"/>
+            </testng>
+            
+            <if>
+                <equals arg1="${test.run1.failed}" arg2="true"/>
+                <then>
+                    <testng classpathref="classpath"
+                            outputdir="${reports}/@{client}.${group}.${browser}/run2"
+                            failureProperty="test.run2.failed"
+                            verbose="5"
+                            usedefaultlisteners="false"
+                            listeners="org.testng.reporters.FailedReporter">
+                        <xmlfileset dir="${reports}/@{client}.${group}.${browser}/run1"
+                                    includes="testng-failed.xml"/>
+                        <sysproperty key="login.admin_username" value="@{login.username}"/>
+                        <sysproperty key="login.admin_password" value="@{login.password}"/>
+                        <sysproperty key="login.username" value="@{login.username}" />
+                        <sysproperty key="login.password" value="@{login.password}" />
+                        <sysproperty key="client" value="@{client}"/>
+                        <sysproperty key="browser" value="${browser}"/>
+                        <sysproperty key="url" value="@{url}"/>
+                        <sysproperty key="reportdir" value="${reports}/@{client}.${group}.${browser}/run2"/>
+                        <sysproperty key="attemptNumber" value="2"/>
+                        <sysproperty key="product" value="@{producttype}"/>
+                        <sysproperty key="group" value="${group}"/>
+                        <sysproperty key="servername" value="@{servername}"/>
+                    </testng>
+                    
+                    <if>
+                        <equals arg1="${test.run2.failed}" arg2="true"/>
+                        <then>
+                            <testng classpathref="classpath"
+                                    outputdir="${reports}/@{client}.${group}.${browser}/run3"
+                                    failureProperty="test.run3.failed"
+                                    verbose="5"
+                                    usedefaultlisteners="false"
+                                    listeners="org.testng.reporters.FailedReporter">
+                                <xmlfileset dir="${reports}/@{client}.${group}.${browser}/run2"
+                                            includes="testng-failed.xml"/>
+                                <sysproperty key="login.admin_username" value="@{login.username}"/>
+                                <sysproperty key="login.admin_password" value="@{login.password}"/>
+                                <sysproperty key="login.username" value="@{login.username}" />
+                                <sysproperty key="login.password" value="@{login.password}" />
+                                <sysproperty key="client" value="@{client}"/>
+                                <sysproperty key="browser" value="${browser}"/>
+                                <sysproperty key="url" value="@{url}"/>
+                                <sysproperty key="reportdir"
+                                             value="${reports}/@{client}.${group}.${browser}/run3"/>
+                                <sysproperty key="attemptNumber" value="3"/>
+                                <sysproperty key="product" value="@{producttype}"/>
+                                <sysproperty key="group" value="${group}"/>
+                                <sysproperty key="servername" value="@{servername}"/>
+                            </testng>
+                            <fail message="Test suite failed." if="test.run3.failed" status="1"/>
+                        </then>
+                    </if>
+                </then>
+            </if>
+        </sequential>
+    </macrodef>
+    
+
+    
+    <target name="test.mcp.staging">
+        <test url="${url.mcp.staging}" login.username="${login.admin_username}" login.password="${login.admin_password}" producttype="mcp" client="mcp.staging" servername="MCP staging"/>
+    </target>
+    <target name="test.mcp.production">
+        <test url="${url.mcp.production}" login.username="${login.admin_username}" login.password="${login.admin_password}" producttype="mcp" client="mcp.production" servername="MCP production"/>
+    </target>
+    
+
+    
+
+
+</project>

@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+
+<suite name="@group@" verbose="5">
+    <test name="@group@" preserve-order="true">
+        <groups>
+            <run>
+                <include name="@producttype@_@group@"/>
+            </run>
+        </groups>
+        <classes>
+
+            <class name="autotest.@producttype@.GoogleCampaignTest"/>
+
+            <!-- -->
+        </classes>
+    </test>
+</suite>
