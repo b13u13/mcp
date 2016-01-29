@@ -108,7 +108,6 @@ public class GoogleCampaignTestCases {
     @Test(priority = 6, enabled = true, groups = {Constants.ACCEPTANCE_GROUP})
     public void creativeSummary() {
         CreativeTestCases.creativesValidateFileds();
-
         /*
         Utils.validateCreativesDetailsTab();
         drv.findElement(By.xpath(Constants.TEST_CREATIVE_XPATH)).click();
