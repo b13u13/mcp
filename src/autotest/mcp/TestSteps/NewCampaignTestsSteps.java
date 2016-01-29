@@ -54,6 +54,7 @@ public class NewCampaignTestsSteps {
                 Utils.fail("Name field maximum validation failed");
             }
             close();
+
             Utils.drv.findElement(By.xpath(ConstatnsNewCampaignPage.NAME_FIELD_XPATH)).clear();
             Utils.drv.findElement(By.xpath(ConstatnsNewCampaignPage.NAME_FIELD_XPATH)).sendKeys(ConstatnsNewCampaignPage.CORRECT_NAME_CAMPAIGN);
         } else if (element.equals(ConstatnsNewCampaignPage.BUDGET_ELEMENT)){
