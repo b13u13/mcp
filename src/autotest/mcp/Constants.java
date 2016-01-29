@@ -48,13 +48,11 @@ public class Constants {
     public static final String TURN_OFF_BUTTON_XPATH = "//td/button[text()='Turn off']";
     public static final String DELETE_BUTTON_XPATH = "//td/button[text()='Delete']";
     public static final String REPUSH_BUTTON_XPATH = "//td/button[text()='Repush']";
-    public static final String FILTER__KEYWORDS_BUTTON_XPATH = "/html/body/div/table[2]/tbody/tr/td[2]/div/div[5]/table/tbody/tr[2]/td/table/tbody/tr/td/table/tbody/tr[1]/td/table/tbody/tr/td[8]/button";
     public static final String FILTER_BUTTON_XPATH = "//td/button[text()='Filter']";
-    public static final String FILTER_ADGROUP_BUTTON_XPATH = "/html/body/div/table[2]/tbody/tr/td[2]/div/div[3]/table/tbody/tr[2]/td/table/tbody/tr[2]/td/div/div[5]/table/tbody/tr/td/table/tbody/tr[1]/td/table/tbody/tr/td[8]/button";
 
 
 
-    public static final String COPY_CAMPAIGN_BUTTON_XPATH = "//td/button[text()='Copy']";
+
 
     public static final String ACTIVE_STATUS = "check.gif";
     public static final String INACTIVE_STATUS = "cross.gif";
@@ -62,10 +60,10 @@ public class Constants {
 
 
 
-    public static final String SELECT_CAMPAIGN_FOR_COPY = "/html/body/div[2]/div/table/tbody/tr[2]/td[2]/div/div/div[1]/table/tbody/tr[1]/td/table/tbody/tr[2]/td/div/table/tbody/tr/td[1]/img";
 
 
-    public static final String NUMBER_OF_KEYWORDS = "/html/body/div/table[2]/tbody/tr/td[2]/div/div[3]/table/tbody/tr[2]/td/table/tbody/tr[2]/td/div/div[1]/table/tbody/tr/td/table/tbody/tr[1]/td/table/tbody/tr/td[1]/table/tbody/tr[2]/td/table/tbody/tr[1]/td/table/tbody/tr/td[3]/div";
+
+
 
     //Creatives
     public static final String VIEW_CREATIVES_XPATH = "/html/body/div/table[2]/tbody/tr/td[2]/div/div[4]/table/tbody/tr[2]/td/table/tbody/tr[2]/td/div/div[1]/table/tbody/tr/td/table/tbody/tr[1]/td/table/tbody/tr/td[1]/table/tbody/tr[2]/td/table/tbody/tr[2]/td/table/tbody/tr/td[6]/div/a";
@@ -104,7 +102,7 @@ public class Constants {
     public static final String COPY_EXISTING_CREATIVES_BUTTON = "/html/body/div/table[2]/tbody/tr/td[2]/div/div[7]/table/tbody/tr[2]/td/table/tbody/tr[2]/td/div/div[1]/table/tbody/tr/td/table/tbody/tr[1]/td/table/tbody/tr/td/button";
     public static final String CREATIVE_FOR_COPY = "/html/body/div[2]/div/table/tbody/tr[2]/td[2]/div/table/tbody/tr[1]/td/table/tbody/tr[2]/td/div/table/tbody/tr[1]/td[1]/img";
     public static final String COPY_BUTTON_XPATH = "//td/button[text()='Copy']";
-    public static final String COMPLETE_COPY_ALERT = "Copied 329 keywords for 1 adgroups";
+
     public static final String SAVE_CREATIVES_BUTTON_2 = "/html/body/div/table[2]/tbody/tr/td[2]/div/div[7]/table/tbody/tr[2]/td/table/tbody/tr[2]/td/div/div[1]/table/tbody/tr/td/table/tbody/tr[3]/td/table/tbody/tr/td/table/tbody/tr/td[1]/button";
     public static final String NEW_CREATIVE = "/html/body/div/table[2]/tbody/tr/td[2]/div/div[5]/table/tbody/tr[2]/td/table/tbody/tr/td/table/tbody/tr[2]/td/table/tbody/tr[2]/td/div/table/tbody/tr/td[4]/div/a";
     public static final String TURNED_OFF_ONE_CREATIVES = "This is the only creative for this adgroup.  If you turn it off, you will need to create a new creative in order for this adgroup to be live.  Are you sure you want to continue?";

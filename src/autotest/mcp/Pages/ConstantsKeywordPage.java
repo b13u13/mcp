@@ -27,5 +27,8 @@ public class ConstantsKeywordPage {
     public static final String KEYWORDS_BID_FIELD_XPATH = "/html/body/div[2]/div/table/tbody/tr[2]/td[2]/div/table/tbody/tr/td/table/tbody/tr[2]/td/div/div[2]/table/tbody/tr/td/table/tbody/tr[2]/td[1]/table/tbody/tr/td/table/tbody/tr[1]/td[2]/div/input";
     public static final String KEYWORDS_BID_FIELD_ALERT_TEXT = "Unable to save: Unable to parse money value from \"text\"";
     public static final String CREATE_KEYWORDS_EDIT_XPATH = "//td/button[text()='Edit']";
-
+    public static final String FILTER_KEYWORDS_BUTTON = "/html/body/div/table[2]/tbody/tr/td[2]/div/div[5]/table/tbody/tr[2]/td/table/tbody/tr/td/table/tbody/tr[1]/td/table/tbody/tr/td[8]/button";
+    public static final String FILTER_KEYWORDS_BUTTON_KEYWORDS = "/html/body/div/table[2]/tbody/tr/td[2]/div/div[5]/table/tbody/tr[2]/td/table/tbody/tr/td/table/tbody/tr[1]/td/table/tbody/tr/td[8]/button";
+    public static final String FILTER_BY = "/html/body/div[2]/div/table/tbody/tr[1]/td/table/tbody/tr[2]/td[2]/select";
+    public static final String FILTER_BY_2 = "/html/body/div[2]/div/table/tbody/tr[1]/td/table/tbody/tr[2]/td[2]/select";
 }

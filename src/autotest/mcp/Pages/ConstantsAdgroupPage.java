@@ -11,6 +11,7 @@ public class ConstantsAdgroupPage {
     public static final String SAVE_BUTTON_ON_ADGROUP_XPATH = "/html/body/div/table[2]/tbody/tr/td[2]/div/div[4]/table/tbody/tr[2]/td/table/tbody/tr[2]/td/div/div[1]/table/tbody/tr/td/table/tbody/tr[2]/td/table/tbody/tr/td/table/tbody/tr/td[1]/button";
     public static final String SAVE_BUTTON_ON_ADGROUP_XPATH_2 = "/html/body/div/table[2]/tbody/tr/td[2]/div/div[3]/table/tbody/tr[2]/td/table/tbody/tr[2]/td/div/div[1]/table/tbody/tr/td/table/tbody/tr[2]/td/table/tbody/tr/td/table/tbody/tr/td[1]/button";
     public static final String CANCEL_BUTTON_ADGROUP = "/html/body/div/table[2]/tbody/tr/td[2]/div/div[4]/table/tbody/tr[2]/td/table/tbody/tr[2]/td/div/div[1]/table/tbody/tr/td/table/tbody/tr[2]/td/table/tbody/tr/td/table/tbody/tr/td[2]/button";
+    public static final String CANCEL_BUTTON_CAMPAIGN = "/html/body/div/table[2]/tbody/tr/td[2]/div/div[2]/table/tbody/tr[3]/td/table/tbody/tr/td/table/tbody/tr/td[2]/button";
     public static final String ADGROUP_ALERT_TEXT = "Please select a URL.";
     public static final String ADGROUP_URL_SELECT_XPATH = "/html/body/div/table[2]/tbody/tr/td[2]/div/div[4]/table/tbody/tr[2]/td/table/tbody/tr[2]/td/div/div[1]/table/tbody/tr/td/table/tbody/tr[1]/td/table/tbody/tr/td[1]/table/tbody/tr[1]/td/table/tbody/tr[5]/td[2]/select";
     public static final String ADGROUP_NAME_FIELD_XPATH = "/html/body/div[1]/table[2]/tbody/tr/td[2]/div/div[4]/table/tbody/tr[2]/td/table/tbody/tr[2]/td/div/div[1]/table/tbody/tr/td/table/tbody/tr[1]/td/table/tbody/tr/td[1]/table/tbody/tr[1]/td/table/tbody/tr[1]/td[2]/input";
@@ -34,6 +35,12 @@ public class ConstantsAdgroupPage {
     public static final String ADGROUP_XPATH = "//td//div/div[text()='Adgroups']";
     public static final String ADGROUP_NAME = "Test adgroup" +(new Random().nextInt(100000));
     public static final String NEW_ADGROUP_NAME = "Garage Doors Installation";
+    public static final String COPY_KEYWORDS_BUTTON_XPATH = "//td/button[text()='Copy Keywords']";
+    public static final String SELECT_CAMPAIGN_FOR_COPY = "/html/body/div[2]/div/table/tbody/tr[2]/td[2]/div/div/div[1]/table/tbody/tr[1]/td/table/tbody/tr[2]/td/div/table/tbody/tr/td[1]/img";
+    public static final String COPY_CAMPAIGN_BUTTON_XPATH = "//td/button[text()='Copy']";
+    public static final String COMPLETE_COPY_ALERT = "Copied 329 keywords for 1 adgroups";
+
+
     //Site Links
     public static final String SITE_LINKS_XPARH = "/html/body/div/table[2]/tbody/tr/td[2]/div/div[4]/table/tbody/tr[2]/td/table/tbody/tr[1]/td/table/tbody/tr/td[3]/div/div";
     public static final String CREATE_SITE_LINK_XPATH = "//td/button[text()='Create Site Link']";

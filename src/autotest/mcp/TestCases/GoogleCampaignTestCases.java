@@ -3,10 +3,7 @@ package autotest.mcp.TestCases;
 import autotest.mcp.Constants;
 import autotest.mcp.Pages.ConstantsKeywordPage;
 import autotest.mcp.Pages.ConstatnsNewCampaignPage;
-import autotest.mcp.TestSteps.AdgroupTestCases;
-import autotest.mcp.TestSteps.CampaignPageTestsSteps;
-import autotest.mcp.TestSteps.KeywordTestCases;
-import autotest.mcp.TestSteps.NewCampaignTestsSteps;
+import autotest.mcp.TestSteps.*;
 import autotest.mcp.Utils;
 import org.openqa.selenium.*;
 import org.testng.annotations.*;
@@ -89,32 +86,29 @@ public class GoogleCampaignTestCases {
     }
 
 
-    @Test(priority = 4, enabled = true, groups = {Constants.ACCEPTANCE_GROUP})
+    @Test(priority = 4, enabled = false, groups = {Constants.ACCEPTANCE_GROUP})
     public void keywordSummary() {
         KeywordTestCases.addKeywords(ConstantsKeywordPage.KEYWORDS);
         KeywordTestCases.enabledDisabledKeywords("Turn off");
         KeywordTestCases.enabledDisabledKeywords("Turn on");
-        /*
-        Utils.filterdKeywords();
-        Utils.deleteKeywords("test keywords");
-        Utils.validateKeywords();
-        Utils.deleteKeywords("test keywords");
-        Utils.enabledButtonOnKeywordsPage();
-        Utils.addNegativeKeywords("test keywords");
-        Utils.deleteKeywords("(-) test keywords");
-        */
+        KeywordTestCases.filteredKeywords();
+        KeywordTestCases.deleteKeywords(ConstantsKeywordPage.KEYWORDS);
+        KeywordTestCases.validateKeywords();
+        KeywordTestCases.enabledButtonOnKeywordsPage();
+        KeywordTestCases.addNegativeKeywords(ConstantsKeywordPage.KEYWORDS);
     }
-    /*
 
-    @Test(priority = 5, enabled = true, groups = {Constants.ACCEPTANCE_GROUP})
+
+    @Test(priority = 5, enabled = false, groups = {Constants.ACCEPTANCE_GROUP})
     public void copyKeywords() {
-        Utils.copyKeywords();
+        AdgroupTestCases.copyKeywords();
     }
 
 
     @Test(priority = 6, enabled = true, groups = {Constants.ACCEPTANCE_GROUP})
     public void creativeSummary() {
-        Utils.creativesValidateFileds();
+        CreativeTestCases.creativesValidateFileds();
+        /*
         Utils.validateCreativesDetailsTab();
         drv.findElement(By.xpath(Constants.TEST_CREATIVE_XPATH)).click();
         Utils.enabledButtonOnCreativesPage();
@@ -123,9 +117,10 @@ public class GoogleCampaignTestCases {
         Utils.deleteCreatives("Test creatives");
         Utils.copyExistingCreatives();
         Utils.deleteCreatives("Creatives");
+        */
     }
 
-
+/*
     @Test(priority = 7, enabled = true, groups = {Constants.ACCEPTANCE_GROUP})
     public void deleteCampaign() {
         Utils.deleteCampaign("Test Name");
