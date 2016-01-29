@@ -1,9 +1,11 @@
 package autotest.mcp.TestCases;
 
 import autotest.mcp.Constants;
+import autotest.mcp.Pages.ConstantsKeywordPage;
 import autotest.mcp.Pages.ConstatnsNewCampaignPage;
 import autotest.mcp.TestSteps.AdgroupTestCases;
 import autotest.mcp.TestSteps.CampaignPageTestsSteps;
+import autotest.mcp.TestSteps.KeywordTestCases;
 import autotest.mcp.TestSteps.NewCampaignTestsSteps;
 import autotest.mcp.Utils;
 import org.openqa.selenium.*;
@@ -42,7 +44,7 @@ public class GoogleCampaignTestCases {
         Utils.logout();
     }
 
-    @Test(enabled = true, groups = {Constants.ACCEPTANCE_GROUP})
+    @Test(enabled = false, groups = {Constants.ACCEPTANCE_GROUP})
     public void validateCampaignPage() {
         CampaignPageTestsSteps.checkCampaignName(Constants.GOOGLE_CAMPIAGNS);
         CampaignPageTestsSteps.enabledButtonOnCampaignPage();
@@ -51,7 +53,7 @@ public class GoogleCampaignTestCases {
 
     }
 
-    @Test(priority = 0, enabled = true, groups = {Constants.ACCEPTANCE_GROUP})
+    @Test(priority = 0, enabled = false, groups = {Constants.ACCEPTANCE_GROUP})
     public void createCampaign(){
         CampaignPageTestsSteps.selectCampaignType("National");
         NewCampaignTestsSteps.enabledButtons("Unsave");
@@ -65,7 +67,7 @@ public class GoogleCampaignTestCases {
 
 
 
-    @Test(priority = 1, enabled = true, groups = {Constants.ACCEPTANCE_GROUP})
+    @Test(priority = 1, enabled = false, groups = {Constants.ACCEPTANCE_GROUP})
     public void validateCampaignTabs(){
         NewCampaignTestsSteps.validateTargetingTab();
         NewCampaignTestsSteps.validateDetailsTab();
@@ -73,25 +75,26 @@ public class GoogleCampaignTestCases {
     }
 
 
-    @Test(priority = 2, enabled = true, groups = {Constants.ACCEPTANCE_GROUP})
+    @Test(priority = 2, enabled = false, groups = {Constants.ACCEPTANCE_GROUP})
     public void createAdgroup() {
         AdgroupTestCases.createNewAdgroup();
     }
 
 
-    @Test(priority = 3, enabled = true, groups = {Constants.ACCEPTANCE_GROUP})
+    @Test(priority = 3, enabled = false, groups = {Constants.ACCEPTANCE_GROUP})
     public void validateAdgroupTabs() {
         AdgroupTestCases.validateSiteLinksTab();
         AdgroupTestCases.validateDetailsTab();
         AdgroupTestCases.filterAdgroup();
     }
 
-/*
+
     @Test(priority = 4, enabled = true, groups = {Constants.ACCEPTANCE_GROUP})
     public void keywordSummary() {
-        Utils.addKeywords("test keywords");
-        Utils.enabledDisabledKeywords("Turn off");
-        Utils.enabledDisabledKeywords("Turn on");
+        KeywordTestCases.addKeywords(ConstantsKeywordPage.KEYWORDS);
+        KeywordTestCases.enabledDisabledKeywords("Turn off");
+        KeywordTestCases.enabledDisabledKeywords("Turn on");
+        /*
         Utils.filterdKeywords();
         Utils.deleteKeywords("test keywords");
         Utils.validateKeywords();
@@ -99,7 +102,9 @@ public class GoogleCampaignTestCases {
         Utils.enabledButtonOnKeywordsPage();
         Utils.addNegativeKeywords("test keywords");
         Utils.deleteKeywords("(-) test keywords");
+        */
     }
+    /*
 
     @Test(priority = 5, enabled = true, groups = {Constants.ACCEPTANCE_GROUP})
     public void copyKeywords() {

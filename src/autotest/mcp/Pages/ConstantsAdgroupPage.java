@@ -30,7 +30,7 @@ public class ConstantsAdgroupPage {
     public static final String ADGROUP_MOBILE_BID_REQIRED_TEXT_XPATH = "//td/div[text()='Cannot set Mobile Bid to null - Required attribute not set']";
     public static final String ADGROUP_MOBILE_BID_REQIRED_TEXT = "Required attribute not set";
     public static final String ADGROUP_FILTER_BUTTON = "/html/body/div/table[2]/tbody/tr/td[2]/div/div[3]/table/tbody/tr[2]/td/table/tbody/tr[2]/td/div/div[5]/table/tbody/tr/td/table/tbody/tr[1]/td/table/tbody/tr/td[8]/button";
-
+    public static final String VIEW_KEYWORDS_LINK = "/html/body/div/table[2]/tbody/tr/td[2]/div/div[4]/table/tbody/tr[2]/td/table/tbody/tr[2]/td/div/div[1]/table/tbody/tr/td/table/tbody/tr[1]/td/table/tbody/tr/td[1]/table/tbody/tr[2]/td/table/tbody/tr[1]/td/table/tbody/tr/td[6]/div/a";
     public static final String ADGROUP_XPATH = "//td//div/div[text()='Adgroups']";
     public static final String ADGROUP_NAME = "Test adgroup" +(new Random().nextInt(100000));
     public static final String NEW_ADGROUP_NAME = "Garage Doors Installation";
