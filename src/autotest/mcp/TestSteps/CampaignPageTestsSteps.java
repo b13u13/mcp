@@ -2,6 +2,8 @@ package autotest.mcp.TestSteps;
 
 import autotest.mcp.Constants;
 import autotest.mcp.Pages.ConstantsCampaignPage;
+import autotest.mcp.Pages.ConstantsCreativePage;
+import autotest.mcp.Pages.ConstantsKeywordPage;
 import autotest.mcp.Pages.ConstatnsNewCampaignPage;
 import autotest.mcp.Utils;
 import org.openqa.selenium.By;
@@ -18,9 +20,6 @@ import java.util.List;
 
 public class CampaignPageTestsSteps {
 
-
-
-
     public static LinkedList<String> selectCampaignSummary() {
 
         Select campaignSumary = new Select(Utils.drv.findElement(By.xpath(Constants.CAMPAIGN_SELECT_XPATH)));
@@ -36,7 +35,7 @@ public class CampaignPageTestsSteps {
     public static void selectCampaignType(String companyType){
         Select campaignType = new Select(Utils.drv.findElement(By.xpath(Constants.CAMPAIGN_SELECT_XPATH)));
         campaignType.selectByVisibleText(companyType);
-        Utils.drv.findElement(By.xpath(ConstantsCampaignPage.CREATE_CAMPAIGN_BUTTON_XPATH)).click();
+
 
     }
 
@@ -92,6 +91,38 @@ public class CampaignPageTestsSteps {
         if (!Utils.isElementPresent(By.linkText(ConstatnsNewCampaignPage.CORRECT_NAME_CAMPAIGN))){
             Utils.fail("Filter by name failed");
         }
+    }
+
+
+    public static void deleteCampaign(String campaign){
+        Utils.drv.findElement(By.xpath(ConstantsCampaignPage.MARK_CAMPAIGN_FOR_DELETE)).click();
+        Utils.drv.findElement(By.xpath(Constants.DELETE_BUTTON_XPATH)).click();
+        Utils.waitForAlert(ConstantsKeywordPage.DELETE_KEYWORDS_ALERT_TEXT);
+        Utils.getTime();
+        if (Utils.isElementPresent(By.linkText(campaign))){
+            Utils.fail("Campaign delete failed");
+        }
+    }
+
+    public static void copyCampaign(){
+        selectCampaignType("National");
+        Utils.drv.findElement(By.xpath(ConstantsCampaignPage.COPY_EXISTING_CAMPAIGN_BUTTON_XPATH)).click();
+        Utils.wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath(ConstantsCampaignPage.SELECT_CAMPAIGN_FOR_COPY_XPATH)));
+        Utils.drv.findElement(By.xpath(ConstantsCampaignPage.SELECT_CAMPAIGN_FOR_COPY_XPATH)).click();
+        Utils.drv.findElement(By.xpath(ConstantsCampaignPage.NEXT_BUTTON)).click();
+        Utils.drv.findElement(By.xpath(ConstantsCampaignPage.COPY_BUTTON)).click();
+        Utils.wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath(ConstatnsNewCampaignPage.NAME_FIELD_XPATH)));
+        Utils.drv.findElement(By.xpath(ConstatnsNewCampaignPage.NAME_FIELD_XPATH)).clear();
+        Utils.drv.findElement(By.xpath(ConstatnsNewCampaignPage.NAME_FIELD_XPATH)).sendKeys(ConstatnsNewCampaignPage.CORRECT_NAME_CAMPAIGN);
+        Utils.drv.findElement(By.xpath(ConstatnsNewCampaignPage.BUDGET_FIELD_XPATH)).clear();
+        Utils.drv.findElement(By.xpath(ConstatnsNewCampaignPage.BUDGET_FIELD_XPATH)).sendKeys("30");
+        NewCampaignTestsSteps.save();
+        Utils.getTime();
+        Utils.drv.findElement(By.xpath(ConstantsCampaignPage.MAIN_CAMPAIGN_PAGE)).click();
+        if (!Utils.isElementPresent(By.xpath(ConstantsCampaignPage.CAMPAIGN_NAME))){
+            Utils.fail("Campaign copy failed");
+        }
+        deleteCampaign(Utils.drv.findElement(By.xpath(ConstantsCampaignPage.CAMPAIGN_NAME)).getText());
     }
 
 

@@ -19,6 +19,7 @@ public class AdgroupTestCases {
         Utils.drv.findElement(By.linkText(ConstatnsNewCampaignPage.CORRECT_NAME_CAMPAIGN)).click();
         Utils.drv.findElement(By.xpath(ConstatnsNewCampaignPage.CREATE_ADGROUP_BUTTON_XPATH)).click();
         Utils.wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath(ConstantsAdgroupPage.ADGROUP_URL_SELECT_XPATH)));
+        Utils.getTime();
         Utils.drv.findElement(By.xpath(ConstantsAdgroupPage.SAVE_BUTTON_ON_ADGROUP_XPATH)).click();
         Utils.waitForAlert(ConstantsAdgroupPage.ADGROUP_ALERT_TEXT);
         Select selectURL = new Select(Utils.drv.findElement((By.xpath(ConstantsAdgroupPage.ADGROUP_URL_SELECT_XPATH))));
@@ -137,11 +138,12 @@ public class AdgroupTestCases {
 
     public static void copyKeywords(){
         Utils.drv.findElement(By.linkText(ConstatnsNewCampaignPage.CORRECT_NAME_CAMPAIGN)).click();
-        //Utils.drv.findElement(By.linkText("Test name70570")).click();
+        //Utils.drv.findElement(By.linkText("Test name25930")).click();
         Utils.drv.findElement(By.xpath(ConstantsAdgroupPage.ADGROUP_XPATH)).click();
         Utils.drv.findElement(By.linkText(ConstantsAdgroupPage.ADGROUP_NAME)).click();
-        //Utils.drv.findElement(By.linkText("Test adgroup76412")).click();
+        //Utils.drv.findElement(By.linkText("Test")).click();
         Utils.wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath(ConstantsAdgroupPage.ADGROUP_NAME_FIELD_XPATH)));
+        Utils.getTime();
         Utils.drv.findElement(By.xpath(ConstantsAdgroupPage.ADGROUP_NAME_FIELD_XPATH)).clear();
         Utils.drv.findElement(By.xpath(ConstantsAdgroupPage.ADGROUP_NAME_FIELD_XPATH)).sendKeys(ConstantsAdgroupPage.NEW_ADGROUP_NAME);
         Utils.drv.findElement(By.xpath(ConstantsAdgroupPage.SAVE_BUTTON_ON_ADGROUP_XPATH)).click();
@@ -153,13 +155,13 @@ public class AdgroupTestCases {
         Utils.getTime();
         Utils.waitForAlert(ConstantsAdgroupPage.COMPLETE_COPY_ALERT);
         Utils.getTime();
-        Utils.drv.findElement(By.xpath(ConstantsAdgroupPage.CANCEL_BUTTON_CAMPAIGN)).click();
-        Utils.drv.findElement(By.linkText(ConstatnsNewCampaignPage.CORRECT_NAME_CAMPAIGN)).click();
-        //Utils.drv.findElement(By.linkText("Test name70570")).click();
+        Utils.getTime();
+        Utils.drv.findElement(By.xpath(ConstantsAdgroupPage.ADGROUP_XPATH)).click();
         Utils.drv.findElement(By.linkText(ConstantsAdgroupPage.NEW_ADGROUP_NAME)).click();
-        Utils.drv.findElement(By.xpath(ConstantsAdgroupPage.ADGROUP_NAME_FIELD_XPATH)).clear();
-        Utils.drv.findElement(By.xpath(ConstantsAdgroupPage.ADGROUP_NAME_FIELD_XPATH)).sendKeys(ConstantsAdgroupPage.ADGROUP_NAME);
-        Utils.drv.findElement(By.xpath(ConstantsAdgroupPage.SAVE_BUTTON_ON_ADGROUP_XPATH)).click();
+        Utils.getTime();
+        Utils.drv.findElement(By.xpath(ConstantsAdgroupPage.ADGROUP_NAME_FIELD_XPATH_2)).clear();
+        Utils.drv.findElement(By.xpath(ConstantsAdgroupPage.ADGROUP_NAME_FIELD_XPATH_2)).sendKeys(ConstantsAdgroupPage.ADGROUP_NAME);
+        Utils.drv.findElement(By.xpath(ConstantsAdgroupPage.SAVE_BUTTON_ON_ADGROUP_XPATH_2)).click();
     }
 
 }

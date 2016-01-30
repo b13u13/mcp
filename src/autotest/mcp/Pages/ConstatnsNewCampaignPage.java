@@ -70,4 +70,6 @@ public class ConstatnsNewCampaignPage {
     public static final String DETAILS_PUSH_TO_PARTNER_XPARH = "//td/div[text()='Pushed To Partner']";
     public static final String DETAILS_ID_XPARH = "//td/div[text()='ID #']";
     public static final String FORCE_REPUSH_BUTTON_XPATH = "//td/button[text()='Force Repush']";
+
+
 }
