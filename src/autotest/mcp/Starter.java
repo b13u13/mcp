@@ -1,6 +1,5 @@
 package autotest.mcp;
 
-import autotest.mcp.TestCases.GoogleCampaignTestCases;
 import org.testng.TestNG;
 
 public class Starter {

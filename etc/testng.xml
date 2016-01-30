@@ -10,7 +10,7 @@
         </groups>
         <classes>
 
-            <class name="autotest.@producttype@.GoogleCampaignTest"/>
+            <class name="autotest.@producttype@.GoogleCampaignTestCases"/>
 
             <!-- -->
         </classes>
