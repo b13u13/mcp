@@ -18,6 +18,7 @@ public class GoogleCampaignTestCases {
     public void init() {
         drv = Utils.getDriver();
     }
+
     @BeforeMethod(enabled = true, groups = {Constants.ACCEPTANCE_GROUP})
     public void login() {
         Utils.login();
@@ -33,6 +34,7 @@ public class GoogleCampaignTestCases {
         Utils.logout();
 
     }
+
     @Test(enabled = true, groups = {Constants.ACCEPTANCE_GROUP})
     public void validateCampaignPage() {
         CampaignPageTestsSteps.checkCampaignName(Constants.GOOGLE_CAMPIAGNS);

@@ -2,9 +2,9 @@ package autotest.mcp;
 
 public class Constants {
     //Test groups
-    public static final String FUNCTIONAL_GROUP = "ui_functional";
-    public static final String ACCEPTANCE_GROUP = "ui_acceptance";
-    public static final String SMOKE_GROUP = "ui_smoke";
+    public static final String FUNCTIONAL_GROUP = "mcp_functional";
+    public static final String ACCEPTANCE_GROUP = "mcp_acceptance";
+    public static final String SMOKE_GROUP = "mcp_smoke";
 
     //Login by Avenger UI
     public static final String LOGINPAGE_URL = Utils.baseURL;
