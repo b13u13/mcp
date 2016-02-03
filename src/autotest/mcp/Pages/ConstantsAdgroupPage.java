@@ -11,7 +11,6 @@ public class ConstantsAdgroupPage {
     public static final String SAVE_BUTTON_ON_ADGROUP_XPATH = "/html/body/div/table[2]/tbody/tr/td[2]/div/div[4]/table/tbody/tr[2]/td/table/tbody/tr[2]/td/div/div[1]/table/tbody/tr/td/table/tbody/tr[2]/td/table/tbody/tr/td/table/tbody/tr/td[1]/button";
     public static final String SAVE_BUTTON_ON_ADGROUP_XPATH_2 = "/html/body/div/table[2]/tbody/tr/td[2]/div/div[3]/table/tbody/tr[2]/td/table/tbody/tr[2]/td/div/div[1]/table/tbody/tr/td/table/tbody/tr[2]/td/table/tbody/tr/td/table/tbody/tr/td[1]/button";
     public static final String CANCEL_BUTTON_ADGROUP = "/html/body/div/table[2]/tbody/tr/td[2]/div/div[4]/table/tbody/tr[2]/td/table/tbody/tr[2]/td/div/div[1]/table/tbody/tr/td/table/tbody/tr[2]/td/table/tbody/tr/td/table/tbody/tr/td[2]/button";
-    public static final String CANCEL_BUTTON_CAMPAIGN = "/html/body/div/table[2]/tbody/tr/td[2]/div/div[3]/table/tbody/tr[3]/td/table/tbody/tr/td/table/tbody/tr/td[2]/button";
     public static final String ADGROUP_ALERT_TEXT = "Please select a URL.";
     public static final String ADGROUP_URL_SELECT_XPATH = "/html/body/div/table[2]/tbody/tr/td[2]/div/div[4]/table/tbody/tr[2]/td/table/tbody/tr[2]/td/div/div[1]/table/tbody/tr/td/table/tbody/tr[1]/td/table/tbody/tr/td[1]/table/tbody/tr[1]/td/table/tbody/tr[5]/td[2]/select";
     public static final String ADGROUP_NAME_FIELD_XPATH = "/html/body/div[1]/table[2]/tbody/tr/td[2]/div/div[4]/table/tbody/tr[2]/td/table/tbody/tr[2]/td/div/div[1]/table/tbody/tr/td/table/tbody/tr[1]/td/table/tbody/tr/td[1]/table/tbody/tr[1]/td/table/tbody/tr[1]/td[2]/input";
@@ -43,7 +42,16 @@ public class ConstantsAdgroupPage {
 
     //Site Links
     public static final String SITE_LINKS_XPARH = "/html/body/div/table[2]/tbody/tr/td[2]/div/div[4]/table/tbody/tr[2]/td/table/tbody/tr[1]/td/table/tbody/tr/td[3]/div/div";
-    public static final String CREATE_SITE_LINK_XPATH = "//td/button[text()='Create Site Link']";
+    public static final String CREATE_SITE_LINK_XPATH = "/html/body/div/table[2]/tbody/tr/td[2]/div/div[4]/table/tbody/tr[2]/td/table/tbody/tr[2]/td/div/div[2]/div/table/tbody/tr[1]/td/table/tbody/tr/td[1]/button";
+    public static final String SITE_LINK_TEXT_INPUT = "/html/body/div/table[2]/tbody/tr/td[2]/div/div[4]/table/tbody/tr[2]/td/table/tbody/tr[2]/td/div/div[2]/div/table/tbody/tr[1]/td[2]/table/tbody/tr/td[1]/input";
+    public static final String SITE_LINK_URL_INPUT = "/html/body/div/table[2]/tbody/tr/td[2]/div/div[4]/table/tbody/tr[2]/td/table/tbody/tr[2]/td/div/div[2]/div/table/tbody/tr[2]/td[2]/table/tbody/tr/td[1]/input";
+    public static final String DESCRIPTION_1_INPUT = "/html/body/div/table[2]/tbody/tr/td[2]/div/div[4]/table/tbody/tr[2]/td/table/tbody/tr[2]/td/div/div[2]/div/table/tbody/tr[3]/td[2]/table/tbody/tr/td[1]/input";
+    public static final String DESCRIPTION_2_INPUT = "/html/body/div/table[2]/tbody/tr/td[2]/div/div[4]/table/tbody/tr[2]/td/table/tbody/tr[2]/td/div/div[2]/div/table/tbody/tr[4]/td[2]/table/tbody/tr/td[1]/input";
+    public static final String TURN_OFF_BUTTON_XPATH = "/html/body/div/table[2]/tbody/tr/td[2]/div/div[4]/table/tbody/tr[2]/td/table/tbody/tr[2]/td/div/div[2]/div/table/tbody/tr[1]/td/table/tbody/tr/td[7]/button";
+    public static final String TURN_ON_BUTTON_XPATH = "/html/body/div/table[2]/tbody/tr/td[2]/div/div[4]/table/tbody/tr[2]/td/table/tbody/tr[2]/td/div/div[2]/div/table/tbody/tr[1]/td/table/tbody/tr/td[5]/button";
+    public static final String MARK_LINK = "/html/body/div/table[2]/tbody/tr/td[2]/div/div[4]/table/tbody/tr[2]/td/table/tbody/tr[2]/td/div/div[2]/div/table/tbody/tr[3]/td/table/tbody/tr[2]/td/div/table/tbody/tr/td[1]/img";
+    public static final String STATUS_XPATH = "/html/body/div/table[2]/tbody/tr/td[2]/div/div[4]/table/tbody/tr[2]/td/table/tbody/tr[2]/td/div/div[2]/div/table/tbody/tr[3]/td/table/tbody/tr[2]/td/div/table/tbody/tr/td[2]/img";
+    public static final String DELETE_BUTTON = "/html/body/div/table[2]/tbody/tr/td[2]/div/div[4]/table/tbody/tr[2]/td/table/tbody/tr[2]/td/div/div[2]/div/table/tbody/tr[1]/td/table/tbody/tr/td[9]/button";
     //Details tab
     public static final String DETAILS_XPARH = "/html/body/div/table[2]/tbody/tr/td[2]/div/div[4]/table/tbody/tr[2]/td/table/tbody/tr[1]/td/table/tbody/tr/td[4]/div/div";
 

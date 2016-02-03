@@ -3,6 +3,7 @@ package autotest.mcp.TestSteps;
 import autotest.mcp.Constants;
 import autotest.mcp.Pages.ConstantsAdgroupPage;
 import autotest.mcp.Pages.ConstantsCampaignPage;
+import autotest.mcp.Pages.ConstantsKeywordPage;
 import autotest.mcp.Pages.ConstatnsNewCampaignPage;
 import autotest.mcp.Utils;
 import bsh.util.Util;
@@ -95,16 +96,102 @@ public class AdgroupTestCases {
 
     public static void validateSiteLinksTab(){
         Utils.drv.findElement(By.linkText(ConstatnsNewCampaignPage.CORRECT_NAME_CAMPAIGN)).click();
-        //Utils.drv.findElement(By.linkText("Test name15850")).click();
+        //Utils.drv.findElement(By.linkText("National1")).click();
         Utils.drv.findElement(By.xpath(ConstantsAdgroupPage.ADGROUP_XPATH)).click();
         Utils.drv.findElement(By.linkText(ConstantsAdgroupPage.ADGROUP_NAME)).click();
-        //Utils.drv.findElement(By.linkText("Test adgroup14818")).click();
+        //Utils.drv.findElement(By.linkText("Test")).click();
         Utils.drv.findElement(By.xpath(ConstantsAdgroupPage.SITE_LINKS_XPARH)).click();
         Utils.wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath(ConstantsAdgroupPage.CREATE_SITE_LINK_XPATH)));
         Utils.drv.findElement(By.xpath(ConstantsAdgroupPage.CREATE_SITE_LINK_XPATH)).isDisplayed();
         Utils.drv.findElement(By.xpath(Constants.TURN_ON_BUTTON_XPATH)).isDisplayed();
         Utils.drv.findElement(By.xpath(Constants.TURN_OFF_BUTTON_XPATH)).isDisplayed();
         Utils.drv.findElement(By.xpath(Constants.DELETE_BUTTON_XPATH)).isDisplayed();
+        Utils.drv.findElement(By.xpath(ConstantsAdgroupPage.CREATE_SITE_LINK_XPATH)).click();
+        Utils.drv.findElement(By.xpath(ConstatnsNewCampaignPage.DOTE_BUTTON_XPATH)).click();
+        Utils.wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath(ConstatnsNewCampaignPage.SITE_LINK_ALERT_XPATH)));
+        if (!Utils.drv.findElement(By.xpath(ConstatnsNewCampaignPage.SITE_LINK_ALERT_XPATH)).getText().contains(ConstatnsNewCampaignPage.SITE_LINK_TEXT_EMPTY_TEXT)) {
+            Utils.fail("Site link text min validation failed");
+        }
+        NewCampaignTestsSteps.close();
+        Utils.drv.findElement(By.xpath(ConstantsAdgroupPage.SITE_LINK_TEXT_INPUT)).sendKeys("Test text");
+        Utils.drv.findElement(By.xpath(ConstatnsNewCampaignPage.DOTE_BUTTON_XPATH)).click();
+        Utils.wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath(ConstatnsNewCampaignPage.SITE_LINK_ALERT_XPATH)));
+        if (!Utils.drv.findElement(By.xpath(ConstatnsNewCampaignPage.SITE_LINK_ALERT_XPATH)).getText().contains(ConstatnsNewCampaignPage.SITE_LINK_URL_EMPTY_TEXT)) {
+            Utils.fail("Site link url min validation failed");
+        }
+        NewCampaignTestsSteps.close();
+        Utils.drv.findElement(By.xpath(ConstantsAdgroupPage.SITE_LINK_URL_INPUT)).sendKeys("text");
+        Utils.drv.findElement(By.xpath(ConstatnsNewCampaignPage.DOTE_BUTTON_XPATH)).click();
+        Utils.wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath(ConstatnsNewCampaignPage.SITE_LINK_ALERT_XPATH)));
+        if (!Utils.drv.findElement(By.xpath(ConstatnsNewCampaignPage.SITE_LINK_ALERT_XPATH)).getText().contains(ConstatnsNewCampaignPage.SITE_LINK_URL_VALIDATION_TEXT)) {
+            Utils.fail("Site link url  validation failed");
+        }
+        NewCampaignTestsSteps.close();
+        Utils.drv.findElement(By.xpath(ConstantsAdgroupPage.SITE_LINK_URL_INPUT)).clear();
+        Utils.drv.findElement(By.xpath(ConstantsAdgroupPage.SITE_LINK_URL_INPUT)).sendKeys("http://text.com");
+        Utils.drv.findElement(By.xpath(ConstantsAdgroupPage.SITE_LINK_TEXT_INPUT)).clear();
+        Utils.drv.findElement(By.xpath(ConstantsAdgroupPage.SITE_LINK_TEXT_INPUT)).sendKeys("Tesssssssssssssssssssssssss");
+        Utils.drv.findElement(By.xpath(ConstatnsNewCampaignPage.DOTE_BUTTON_XPATH)).click();
+        Utils.wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath(ConstatnsNewCampaignPage.SITE_LINK_ALERT_XPATH)));
+        if (!Utils.drv.findElement(By.xpath(ConstatnsNewCampaignPage.SITE_LINK_ALERT_XPATH)).getText().contains(ConstatnsNewCampaignPage.SITE_LINK_TEXT_VALIDATION_TEXT)) {
+            Utils.fail("Site link text  validation failed");
+        }
+        NewCampaignTestsSteps.close();
+        Utils.drv.findElement(By.xpath(ConstantsAdgroupPage.SITE_LINK_TEXT_INPUT)).clear();
+        Utils.drv.findElement(By.xpath(ConstantsAdgroupPage.SITE_LINK_TEXT_INPUT)).sendKeys("Test text");
+        Utils.drv.findElement(By.xpath(ConstantsAdgroupPage.DESCRIPTION_1_INPUT)).sendKeys("TesssssssssssssssssssssssssTesssssssssssssssssssssssss");
+        Utils.drv.findElement(By.xpath(ConstatnsNewCampaignPage.DOTE_BUTTON_XPATH)).click();
+        Utils.wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath(ConstatnsNewCampaignPage.SITE_LINK_ALERT_XPATH)));
+        if (!Utils.drv.findElement(By.xpath(ConstatnsNewCampaignPage.SITE_LINK_ALERT_XPATH)).getText().contains(ConstatnsNewCampaignPage.DESCRIPTION_VALIDATION_TEXT)) {
+            Utils.fail("Description validation failed");
+        }
+        NewCampaignTestsSteps.close();
+        Utils.drv.findElement(By.xpath(ConstantsAdgroupPage.DESCRIPTION_2_INPUT)).sendKeys("Tesssssssssssssssssssssssss");
+        Utils.drv.findElement(By.xpath(ConstatnsNewCampaignPage.DOTE_BUTTON_XPATH)).click();
+        Utils.wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath(ConstatnsNewCampaignPage.SITE_LINK_ALERT_XPATH)));
+        if (!Utils.drv.findElement(By.xpath(ConstatnsNewCampaignPage.SITE_LINK_ALERT_XPATH)).getText().contains(ConstatnsNewCampaignPage.DESCRIPTION_1_LENGTH_VALIDATION_TEXT)) {
+            Utils.fail("Description1 max validation failed");
+        }
+        NewCampaignTestsSteps.close();
+        Utils.drv.findElement(By.xpath(ConstantsAdgroupPage.DESCRIPTION_1_INPUT)).clear();
+        Utils.drv.findElement(By.xpath(ConstantsAdgroupPage.DESCRIPTION_1_INPUT)).sendKeys("Description1");
+        Utils.drv.findElement(By.xpath(ConstantsAdgroupPage.DESCRIPTION_2_INPUT)).clear();
+        Utils.drv.findElement(By.xpath(ConstantsAdgroupPage.DESCRIPTION_2_INPUT)).sendKeys("TesssssssssssssssssssssssssTesssssssssssssssssssssssss");
+        Utils.drv.findElement(By.xpath(ConstatnsNewCampaignPage.DOTE_BUTTON_XPATH)).click();
+        Utils.wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath(ConstatnsNewCampaignPage.SITE_LINK_ALERT_XPATH)));
+        if (!Utils.drv.findElement(By.xpath(ConstatnsNewCampaignPage.SITE_LINK_ALERT_XPATH)).getText().contains(ConstatnsNewCampaignPage.DESCRIPTION_1_LENGTH_VALIDATION_TEXT)) {
+            Utils.fail("Description2 max validation failed");
+        }
+        NewCampaignTestsSteps.close();
+        Utils.drv.findElement(By.xpath(ConstantsAdgroupPage.DESCRIPTION_2_INPUT)).clear();
+        Utils.drv.findElement(By.xpath(ConstantsAdgroupPage.DESCRIPTION_2_INPUT)).sendKeys("Description2");
+        Utils.drv.findElement(By.xpath(ConstatnsNewCampaignPage.DOTE_BUTTON_XPATH)).click();
+
+
+        Utils.wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath(ConstantsAdgroupPage.TURN_OFF_BUTTON_XPATH)));
+        Utils.drv.findElement(By.xpath(ConstantsAdgroupPage.TURN_OFF_BUTTON_XPATH)).click();
+        Utils.waitForAlert(ConstatnsNewCampaignPage.NOT_SELECTED_TEXT);
+        Utils.drv.findElement(By.xpath(ConstantsAdgroupPage.MARK_LINK)).click();
+        Utils.drv.findElement(By.xpath(ConstantsAdgroupPage.TURN_OFF_BUTTON_XPATH)).click();
+        Utils.getTime();
+        if (!Utils.drv.findElement(By.xpath(ConstantsAdgroupPage.STATUS_XPATH)).getAttribute("src").substring(35, 44).equals(Constants.INACTIVE_STATUS)) {
+            Utils.fail("Site link is not turned off");
+        }
+        Utils.drv.findElement(By.xpath(ConstantsAdgroupPage.TURN_ON_BUTTON_XPATH)).click();
+        Utils.waitForAlert(ConstatnsNewCampaignPage.NOT_SELECTED_TEXT);
+        Utils.drv.findElement(By.xpath(ConstantsAdgroupPage.MARK_LINK)).click();
+        Utils.drv.findElement(By.xpath(ConstantsAdgroupPage.TURN_ON_BUTTON_XPATH)).click();
+        Utils.getTime();
+        if (!Utils.drv.findElement(By.xpath(ConstantsAdgroupPage.STATUS_XPATH)).getAttribute("src").substring(35, 44).equals(Constants.ACTIVE_STATUS)) {
+            Utils.fail("Site link is not turned on");
+        }
+        Utils.drv.findElement(By.xpath(ConstantsAdgroupPage.MARK_LINK)).click();
+        Utils.drv.findElement(By.xpath(ConstantsAdgroupPage.DELETE_BUTTON)).click();
+        Utils.waitForAlert(ConstantsKeywordPage.DELETE_KEYWORDS_ALERT_TEXT);
+        Utils.getTime();
+        if (Utils.isElementPresent(By.linkText("Test text"))){
+            Utils.fail("Site link delete failed");
+        }
 
     }
 

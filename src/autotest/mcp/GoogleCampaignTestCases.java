@@ -35,7 +35,7 @@ public class GoogleCampaignTestCases {
 
     }
 
-    @Test(enabled = true, groups = {Constants.ACCEPTANCE_GROUP})
+    @Test(enabled = false, groups = {Constants.ACCEPTANCE_GROUP})
     public void validateCampaignPage() {
         CampaignPageTestsSteps.checkCampaignName(Constants.GOOGLE_CAMPIAGNS);
         CampaignPageTestsSteps.enabledButtonOnCampaignPage();
@@ -44,7 +44,7 @@ public class GoogleCampaignTestCases {
 
     }
 
-    @Test(priority = 0, enabled = true, groups = {Constants.ACCEPTANCE_GROUP})
+    @Test(priority = 0, enabled = false, groups = {Constants.ACCEPTANCE_GROUP})
     public void createCampaign(){
         CampaignPageTestsSteps.selectCampaignType("National");
         Utils.drv.findElement(By.xpath(ConstantsCampaignPage.CREATE_CAMPAIGN_BUTTON_XPATH)).click();
@@ -59,15 +59,16 @@ public class GoogleCampaignTestCases {
 
 
 
-    @Test(priority = 1, enabled = true, groups = {Constants.ACCEPTANCE_GROUP})
+    @Test(priority = 1, enabled = false, groups = {Constants.ACCEPTANCE_GROUP})
     public void validateCampaignTabs(){
         NewCampaignTestsSteps.validateTargetingTab();
         NewCampaignTestsSteps.validateDetailsTab();
+        NewCampaignTestsSteps.validateSiteLinksTab();
 
     }
 
 
-    @Test(priority = 2, enabled = true, groups = {Constants.ACCEPTANCE_GROUP})
+    @Test(priority = 2, enabled = false, groups = {Constants.ACCEPTANCE_GROUP})
     public void createAdgroup() {
         AdgroupTestCases.createNewAdgroup();
     }
@@ -81,7 +82,7 @@ public class GoogleCampaignTestCases {
     }
 
 
-    @Test(priority = 4, enabled = true, groups = {Constants.ACCEPTANCE_GROUP})
+    @Test(priority = 4, enabled = false, groups = {Constants.ACCEPTANCE_GROUP})
     public void keywordSummary() {
         KeywordTestCases.addKeywords(ConstantsKeywordPage.KEYWORDS);
         KeywordTestCases.enabledDisabledKeywords("Turn off");
@@ -94,13 +95,13 @@ public class GoogleCampaignTestCases {
     }
 
 
-    @Test(priority = 5, enabled = true, groups = {Constants.ACCEPTANCE_GROUP})
+    @Test(priority = 5, enabled = false, groups = {Constants.ACCEPTANCE_GROUP})
     public void copyKeywords() {
         AdgroupTestCases.copyKeywords();
     }
 
 
-    @Test(priority = 6, enabled = true, groups = {Constants.ACCEPTANCE_GROUP})
+    @Test(priority = 6, enabled = false, groups = {Constants.ACCEPTANCE_GROUP})
     public void creativeSummary() {
         CreativeTestCases.creativesValidateFileds();
         CreativeTestCases.validateTurnofAndTurnonCreatives("Turn off");
@@ -112,12 +113,12 @@ public class GoogleCampaignTestCases {
     }
 
 
-    @Test(priority = 7, enabled = true, groups = {Constants.ACCEPTANCE_GROUP})
+    @Test(priority = 7, enabled = false, groups = {Constants.ACCEPTANCE_GROUP})
     public void deleteCampaign() {
         CampaignPageTestsSteps.deleteCampaign(Utils.drv.findElement(By.xpath(ConstantsCampaignPage.CAMPAIGN_NAME)).getText());
     }
 
-    @Test(priority = 8, enabled = true, groups = {Constants.ACCEPTANCE_GROUP})
+    @Test(priority = 8, enabled = false, groups = {Constants.ACCEPTANCE_GROUP})
     public void copyExistingCampaign() {
         CampaignPageTestsSteps.copyCampaign();
     }

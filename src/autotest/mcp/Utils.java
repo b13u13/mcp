@@ -59,24 +59,24 @@ public class Utils extends TestListenerAdapter implements IExecutionListener {
     public void onExecutionStart() {
 
 
-
+/*
   String browser = System.getProperty("browser");
 Utils.baseURL = System.getProperty("url");
 Utils.reportDir = System.getProperty("reportdir");
 this.attemptNumber = System.getProperty("attemptNumber");
 Utils.product = System.getProperty("product");
 String group = System.getProperty("group");
-/*
+*/
         String browser="cr";
         Utils.baseURL="https://llui1.qa2.marchex.com:8384/avenger";
         Utils.reportDir="reports/ui.acceptance.cr/run1";
         this.attemptNumber="1";
         Utils.product="ui";
         String group="acceptance";
-*/
+
                         try {
-                            reportFile = new File(reportDir + "/../report.htm");
-                            //reportFile = new File(reportDir + "/../../../etc/report.htm");
+                            //reportFile = new File(reportDir + "/../report.htm");
+                            reportFile = new File(reportDir + "/../../../etc/report.htm");
                             if (!reportFile.exists()) {
                                 throw new IOException("Blank 'report.htm' file was not found");
                             } else {

@@ -71,5 +71,25 @@ public class ConstatnsNewCampaignPage {
     public static final String DETAILS_ID_XPARH = "//td/div[text()='ID #']";
     public static final String FORCE_REPUSH_BUTTON_XPATH = "//td/button[text()='Force Repush']";
 
-
+    //Site Links
+    public static final String SITE_LINKS_XPATH = "//td//div/div[text()='Site Links']";
+    public static final String CREATE_BUTTON_XPATH = "//td/button[text()='Create Site Link']";
+    public static final String SITE_LINK_TEXT_INPUT = "/html/body/div/table[2]/tbody/tr/td[2]/div/div[3]/table/tbody/tr[2]/td/table/tbody/tr[2]/td/div/div[3]/div/table/tbody/tr[1]/td[2]/table/tbody/tr/td[1]/input";
+    public static final String SITE_LINK_ALERT_XPATH = "/html/body/div[2]/div/table/tbody/tr[2]/td[2]/div/table/tbody/tr[1]/td/table/tbody/tr/td/div";
+    public static final String SITE_LINK_TEXT_EMPTY_TEXT = "Please enter Site Link Text";
+    public static final String SITE_LINK_URL_EMPTY_TEXT = "Please enter Site Link URL";
+    public static final String DOTE_BUTTON_XPATH = "//td/button[text()='Done']";
+    public static final String SITE_LINK_URL_INPUT = "/html/body/div/table[2]/tbody/tr/td[2]/div/div[3]/table/tbody/tr[2]/td/table/tbody/tr[2]/td/div/div[3]/div/table/tbody/tr[2]/td[2]/table/tbody/tr/td[1]/input";
+    public static final String SITE_LINK_URL_VALIDATION_TEXT = "Validation Failed[ SitelinkEntity Error: 'URL [text] is improperly formatted]";
+    public static final String SITE_LINK_TEXT_VALIDATION_TEXT = "Validation Failed[ SitelinkEntity Error: 'Sitelink Text cannot exceed 25 characters]";
+    public static final String DESCRIPTION_1_INPUT = "/html/body/div/table[2]/tbody/tr/td[2]/div/div[3]/table/tbody/tr[2]/td/table/tbody/tr[2]/td/div/div[3]/div/table/tbody/tr[3]/td[2]/table/tbody/tr/td[1]/input";
+    public static final String DESCRIPTION_2_INPUT = "/html/body/div/table[2]/tbody/tr/td[2]/div/div[3]/table/tbody/tr[2]/td/table/tbody/tr[2]/td/div/div[3]/div/table/tbody/tr[4]/td[2]/table/tbody/tr/td[1]/input";
+    public static final String DESCRIPTION_VALIDATION_TEXT = "Validation Failed[ SitelinkEntity Error: 'Only one description provided. Must provide both or none at all]";
+    public static final String DESCRIPTION_1_LENGTH_VALIDATION_TEXT = "Validation Failed[ SitelinkEntity Error: 'Description line cannot exceed 35 characters]";
+    public static final String NOT_SELECTED_TEXT = "No Site Links have been selected";
+    public static final String TURN_OFF = "/html/body/div/table[2]/tbody/tr/td[2]/div/div[3]/table/tbody/tr[2]/td/table/tbody/tr[2]/td/div/div[3]/div/table/tbody/tr[1]/td/table/tbody/tr/td[7]/button";
+    public static final String TURN_ON = "/html/body/div/table[2]/tbody/tr/td[2]/div/div[3]/table/tbody/tr[2]/td/table/tbody/tr[2]/td/div/div[3]/div/table/tbody/tr[1]/td/table/tbody/tr/td[5]/button";
+    public static final String MARK_LINK = "/html/body/div/table[2]/tbody/tr/td[2]/div/div[3]/table/tbody/tr[2]/td/table/tbody/tr[2]/td/div/div[3]/div/table/tbody/tr[3]/td/table/tbody/tr[2]/td/div/table/tbody/tr/td[1]/img";
+    public static final String STATUS_XPATH = "/html/body/div/table[2]/tbody/tr/td[2]/div/div[3]/table/tbody/tr[2]/td/table/tbody/tr[2]/td/div/div[3]/div/table/tbody/tr[3]/td/table/tbody/tr[2]/td/div/table/tbody/tr/td[2]/img";
+    public static final String DELETE_BUTTON = "/html/body/div/table[2]/tbody/tr/td[2]/div/div[3]/table/tbody/tr[2]/td/table/tbody/tr[2]/td/div/div[3]/div/table/tbody/tr[1]/td/table/tbody/tr/td[9]/button";
 }
